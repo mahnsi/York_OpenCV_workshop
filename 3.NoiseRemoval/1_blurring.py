@@ -3,13 +3,9 @@ Applying different types of blurring techniques in OpenCV to reduce noise and sm
 """
 
 import cv2 as cv
-import os
 
-# path
-path = os.path.join(".", "3.Noise Removel", "cat1.png")
-
-# Read
-img = cv.imread(path)
+# Read image
+img = cv.imread("cat1.png")
 
 # Apply different blurring techniques:
 # 1. Simple Average Blur - each pixel is replaced by the average of its neighborhood
@@ -25,7 +21,9 @@ m_img = cv.medianBlur(src=img, ksize=7)
 cv.imshow("Simple Blur", blurred_img)
 cv.imshow("Gaussian Blur", g_img)
 cv.imshow("Median Blur", m_img)
+
 cv.waitKey(0)
+cv.destroyAllWindows()
 
 # Notes:
 # - Blurring is useful for reducing noise in images.
