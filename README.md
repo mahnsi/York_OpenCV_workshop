@@ -45,3 +45,4 @@ Here are some additional resources for further learning and exploration of OpenC
 - [Custom Hand Gesture Recognition with Hand Landmarks Using Google’s Mediapipe + OpenCV in Python](https://youtu.be/a99p_fAr6e4?si=ys2OMrmtmufZpYU-)
 - [What is YOLO algorithm? | Deep Learning Tutorial 31 (Tensorflow, Keras & Python)](https://youtu.be/ag3DLKsl2vk?si=2I2y9YRA9Rz5-1CZ)
 - [Object Detection with Python FULL COURSE | Computer Vision](https://youtu.be/UL2cfTTqdNo?si=uIjaxPt5gCq5Pkqs)
+- [Contour article](https://aleksandarhaber.com/contour-detection-in-opencv-python-opencv-tutorial-in-python/)

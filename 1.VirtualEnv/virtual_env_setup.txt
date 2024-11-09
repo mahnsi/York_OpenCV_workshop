@@ -25,3 +25,7 @@ For Windows:
 2.To Install Packages from requirements.txt:
 (If you have a requirements.txt file with a list of dependencies, you can install all the packages with:)
     pip install -r requirements.txt
+
+
+For Windows user you might need to set the ExecutionPolicy
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
