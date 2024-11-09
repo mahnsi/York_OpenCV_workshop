@@ -5,17 +5,12 @@
 # on an image using OpenCV.
 
 import cv2 as cv
-import os
 import _Colors_module as c
 
 
-# Path
-path = os.path.join(".", "4.Object Detection", "wb.png")
-
 # Read 
-img = cv.imread(path)
+img = cv.imread("wb.png")
 # you may need to resize the img!
-
 
 # Shape of the image (height, width, channels)
 print(f"Image Shape: {img.shape}")
@@ -52,6 +47,11 @@ cv.putText(img=img, text="This is a text", org=(1700, 1000), fontFace=5, fontSca
 # Display
 cv.imshow("Drawings on Image", img)
 cv.waitKey(0)
+
+
+
+
+
 
 # ================================
 # Note:

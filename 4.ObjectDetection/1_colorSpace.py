@@ -3,13 +3,10 @@ Demonstrating color space conversions in OpenCV, including BGR to RGB and graysc
 """
 
 import cv2 as cv
-import os
 
-# path
-path = os.path.join(".", "3.Noise Removel", "cat1.png")
 
 # Read the image (default color space is BGR)
-img = cv.imread(path)
+img = cv.imread("cat1.png")
 
 # Convert color spaces
 rgb_img = cv.cvtColor(img, cv.COLOR_BGR2RGB)     # BGR to RGB
@@ -19,7 +16,11 @@ gray_img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)   # BGR to Grayscale
 cv.imshow("Original (BGR)", img)          # Original in BGR
 cv.imshow("RGB Image", rgb_img)           # Converted to RGB
 cv.imshow("Grayscale Image", gray_img)    # Converted to Grayscale
+
 cv.waitKey(0)
+cv.destroyAllWindows()
+
+
 
 # Notes:
 # - OpenCV reads images in the BGR color space by default.

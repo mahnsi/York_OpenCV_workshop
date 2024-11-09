@@ -5,13 +5,9 @@
 """
 
 import cv2 as cv
-import os
-
-# Path
-path = os.path.join(".", "4.Object Detection","cat1.png")
 
 # Read the image
-img = cv.imread(path)
+img = cv.imread("cat1.png")
 
 # Convert the image to grayscale
 # Thresholding works on grayscale images, where each pixel has only intensity information.
@@ -30,6 +26,9 @@ blur_img = cv.medianBlur(th_img, 7)
 cv.imshow("Thresholded Image", th_img)
 cv.imshow("Blurred Image", blur_img)
 cv.waitKey(0)
+
+
+
 
 # ================================
 # Note:

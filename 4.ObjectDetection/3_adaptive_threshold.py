@@ -8,11 +8,9 @@ import os
 # Unlike simple thresholding, adaptive thresholding calculates a different threshold 
 # for each region of the image, making it more effective for images with varying lighting conditions.
 
-# Path
-path = os.path.join(".", "4.Object Detection","note.webp")
 
 # Read 
-img = cv.imread(path)
+img = cv.imread("note.webp")
 
 # Convert the image to grayscale
 gray_img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -34,6 +32,8 @@ th_img = cv.adaptiveThreshold(src=gray_img, maxValue=255, adaptiveMethod=cv.ADAP
 # Display 
 cv.imshow("Thresholded Image", th_img)
 cv.waitKey(0)
+
+
 
 # ================================
 # Note:

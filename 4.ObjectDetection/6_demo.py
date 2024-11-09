@@ -12,17 +12,18 @@
 # This demo is useful for basic object detection and can be extended for
 # various applications like shape detection, segmenting objects, etc.
 
-import os
 import _Colors_module as c
 import cv2 as cv
 
-# Path
-path = os.path.join(".", "4.ObjectDetection", "birds.jpg")
-
 
 # Read the image
-birds = cv.imread(path)
+birds = cv.imread("birds.jpg")
 
+# Resize the image
+birds = cv.resize(src=birds, dsize=(650, 650))
+
+# Original Image after Resizing
+cv.imshow("Original Image", birds)
 
 # ================================
 # Step 1: Convert to Grayscale pixels
@@ -80,9 +81,12 @@ for cnt in contours:
 # Display the Result
 # ================================
 cv.imshow("Detected Birds", birds)
-cv.imshow("blurred_birds", blurred_birds)
+cv.imshow("Blurred Birds", blurred_birds)
+
 cv.waitKey(0)
 cv.destroyAllWindows()
+
+
 
 # ================================
 # Notes:
