@@ -26,6 +26,7 @@ class HandDetector:
 
         # return img
 
+    #  draw land mark
     def showLandMarks(self, img):
         if self.result.multi_hand_landmarks:
             # Extract landmarks for each hands

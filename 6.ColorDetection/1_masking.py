@@ -34,11 +34,11 @@ while True:
     hsv_img = cv.cvtColor(src=frame, code=cv.COLOR_BGR2HSV)
 
     # Create a binary mask to isolate the specified color range in the frame (green here)
-    mask = cv.inRange(src=hsv_img, lowerb=low_green, upperb=high_green)
+    mask = cv.inRange(src=hsv_img, lowerb=low_green, upperb=high_green) # works with hsv color
 
     # Steps to draw bounding boxes:
-    # 1. Convert the image to grayscale (if needed).
-    # 2. Apply thresholding to create a binary image (foreground as white, background as black).
+    # 1. opt: Convert the image to grayscale (if needed).
+    # 2. opt: Apply thresholding to create a binary image (foreground as white, background as black).
     # 3. Use contours to detect boundaries of objects in the binary image.
     # 4. In a loop, for each contour, calculate the bounding box using cv.boundingRect().
     # 5. Draw the bounding box around each detected object on the original image.
@@ -51,3 +51,15 @@ while True:
 # Release webcam and close OpenCV windows
 webcam.release()
 cv.destroyAllWindows()
+
+
+"""
+Binary Masking: Create a mask where desired areas are white (255) and others are black (0). 
+Use cv2.bitwise_and() to apply the mask to the image.
+
+ROI Masking: Define a rectangular region in the image. 
+Create a mask for that region and apply it using cv2.bitwise_and().
+
+Masking with Color Range: Use cv2.inRange() to create a mask based on a color range
+(e.g., isolate specific colors in an image).
+"""
