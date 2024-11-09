@@ -10,9 +10,8 @@ We will use three different types of blurring techniques to smooth the image:
 
 import cv2 as cv
 
-
-# Read image
-img = cv.imread("cat1.png")
+# Read the image
+img = cv.imread("noisyImg.png")
 
 # 1. Simple Average Blur:
 blurred_img = cv.blur(img, (7, 7))
@@ -28,5 +27,6 @@ cv.imshow("Original Image", img)
 cv.imshow("Averaging Blur", blurred_img)
 cv.imshow("Gaussian Blur", g_img)
 cv.imshow("Median Blur", m_img)
-cv.waitKey(0)
 
+cv.waitKey(0)
+cv.destroyAllWindows()

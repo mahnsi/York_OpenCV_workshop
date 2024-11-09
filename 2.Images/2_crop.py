@@ -3,24 +3,25 @@ Cropping an Image
 """
 
 import cv2 as cv
-import os
 
-# path
-path = os.path.join(".", "2.images", "cat1.png")
+# Read image
+img = cv.imread("cat1.png")
 
-# Read
-img = cv.imread(path)
-
-# Print the shape of the image (height, width, channels)
+# Print the shape of the image (height, width, channels) (BGR - 3 Channels)
 print("Image shape:", img.shape)
 
 # Crop the image
 # Cropping syntax: img[y_start:y_end, x_start:x_end]
 cropped_img = img[620:1200, 420:1300]
 
-# Display 
+
+# Display Original Image
+cv.imshow("Original Image", img)
+# Display Cropped Image
 cv.imshow("Cropped Image", cropped_img)
+
 cv.waitKey(0) 
+cv.destroyAllWindows()
 
 """
 Note: Images are stored as NumPy arrays in OpenCV.
