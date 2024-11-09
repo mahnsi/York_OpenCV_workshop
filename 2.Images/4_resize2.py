@@ -4,7 +4,7 @@ Resizing an image using a custom function.
 
 import cv2 as cv
 
-def rescale(image, scale=0.75):
+def rescale(image, scale=0.50):
     # Images, Videos and Live Video
     width = int(image.shape[1] * scale)
     height = int(image.shape[0] * scale)
