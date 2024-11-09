@@ -18,6 +18,11 @@ cv.waitKey(0)
 cv.destroyAllWindows()
 
 
+
+
+
+
+
 # # Reading and displaying (better way)
 # img = cv.imread("cat1.png")
 # if img is None:

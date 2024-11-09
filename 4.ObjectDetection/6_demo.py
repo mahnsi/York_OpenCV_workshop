@@ -72,10 +72,11 @@ for cnt in contours:
         # Draw contours on the original image
         cv.drawContours(image=birds, contours=cnt, contourIdx=-1, color=c.BLUE, thickness=3)
 
-        # Get the bounding box for the contour
-        x1, y1, w, h = cv.boundingRect(array=cnt)
+        # Get the bounding box for the CONTOUR
+        x1, y1, w, h = cv.boundingRect(array=cnt) #calculates rectangle that can contain the contour cnt. (x1 and y1 represent the top-left corner coordinates of this bounding rectangle. w and h are the width and height of the rectangle, respectively.)
         # Draw the bounding box
         cv.rectangle(img=birds, pt1=(x1, y1), pt2=(x1 + w, y1 + h), color=c.YELLOW, thickness=3)
+         
 
 # ================================
 # Display the Result
@@ -103,16 +104,3 @@ cv.destroyAllWindows()
 # You're correct; this approach relies on a clear background to detect objects accurately.
 # When the background is cluttered or the objects blend into it, contour detection using simple thresholding
 # may not work well.
-
-"""
-Grayscale Images: In grayscale images, each pixel has an intensity value between 0 and 255, where 0 represents black, 255 represents white, and values in between correspond to shades of gray. This allows 256 possible intensity levels, capturing fine variations in brightness without color.
-
-Binary Images: Binary images use only two pixel values: 0 and 255. In such images, 0 (black) typically represents the background, and 255 (white) represents the foreground or object of interest. Binary images are often created by applying a threshold to grayscale images, where pixels above the threshold are set to 255 and those below are set to 0.
-"""
-
-"""
-If the subject is white on a black background, cv2.findContours() works seamlessly, as it’s optimized to detect contours around white regions (foreground). By applying a binary threshold or mask that makes the subject white (255) and background black (0), you get accurate contours around the white areas, which simplifies processing.
-
-If the subject is black on a white background, cv2.findContours() can still find contours, but it may not perform as consistently. To handle this, you can invert the image using cv2.bitwise_not(), turning the subject white and background black, which aligns with the function’s expectations. Alternatively, some contour retrieval modes like cv2.RETR_EXTERNAL might still detect contours, but inversion generally yields more reliable and consistent results.
-
-"""

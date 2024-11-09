@@ -30,7 +30,7 @@ cv.destroyAllWindows()
 # - Color spaces are different ways to represent color information in an image:
 #   1. **BGR**: The default format in OpenCV, with each pixel represented as Blue, Green, and Red channels.
 #   2. **RGB**: Common format in other libraries, where each pixel is represented as Red, Green, and Blue channels.
-#   3. **Grayscale**: Simplifies the image to a single channel, reducing information but lowering storage needs.
+#   3. **Grayscale**: Simplifies the image to a single channel (reduces complexity), reducing information but lowering storage needs.
 #   4. **HSV**: Often used in color detection and segmentation as it separates color intensity.
 
 # - Converting from BGR to grayscale reduces the three color channels to one, making images lighter in storage and faster to process.
