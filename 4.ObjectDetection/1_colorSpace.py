@@ -22,6 +22,9 @@ cv.destroyAllWindows()
 
 
 
+
+
+
 # Notes:
 # - OpenCV reads images in the BGR color space by default.
 # - Color spaces are different ways to represent color information in an image:
