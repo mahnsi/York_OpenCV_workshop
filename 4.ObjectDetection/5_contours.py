@@ -51,6 +51,7 @@ cv.drawContours(contour_image, contours, -1, (0, 255, 0), 2)  # Draw all contour
 cv.imshow("Contours", contour_image)
 cv.waitKey(0)
 cv.destroyAllWindows()
+cv.destroyAllWindows()
 
 """
 Explanation of Steps:

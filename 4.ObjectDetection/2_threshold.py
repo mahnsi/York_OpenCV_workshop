@@ -16,7 +16,7 @@ gray_img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 # Apply simple (global) thresholding
 # Any pixel intensity below the threshold (80) becomes black (0), and above it becomes white (255).
 # This converts the image into a binary image (black and white).
-ret, th_img = cv.threshold(src=gray_img, thresh=80, maxval=255, type=cv.THRESH_BINARY)
+ret, th_img = cv.threshold(src=gray_img, thresh=80, maxval=255, type=cv.THRESH_BINARY) # ret is the threshold value that was applied to the image, which can be useful for reference or when using adaptive thresholding methods.
 
 # optional: Apply median blur to remove noise
 # Median blur helps smooth out the binary image by reducing small fluctuations.
@@ -26,6 +26,7 @@ blur_img = cv.medianBlur(th_img, 7)
 cv.imshow("Thresholded Image", th_img)
 cv.imshow("Blurred Image", blur_img)
 cv.waitKey(0)
+cv.destroyAllWindows()
 
 
 

@@ -15,23 +15,27 @@ img = cv.imread("note.webp")
 # Convert the image to grayscale
 gray_img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
-# Apply adaptive thresholding
-# Adaptive thresholding calculates a threshold for each pixel based on the values in its neighborhood.
-# In this case, we use a Gaussian mean to compute the threshold.
-# The parameters are:
-# - 255: The maximum intensity value (white).
-# - cv.ADAPTIVE_THRESH_GAUSSIAN_C: The method for computing the threshold (Gaussian weighted sum of neighborhood values).
-# - cv.THRESH_BINARY: The type of thresholding (binary thresholding).
-# - 21: The size of the local region (block size) for calculating the threshold.
-# - 30: A constant value subtracted from the mean.
+"""
+Apply adaptive thresholding
+Adaptive thresholding calculates a threshold for each pixel based on the values in its neighborhood.
+In this case, we use a Gaussian mean to compute the threshold.
+The parameters are:
+- 255: The maximum intensity value (white).
+- cv.ADAPTIVE_THRESH_GAUSSIAN_C: The method for computing the threshold (Gaussian weighted sum of neighborhood values).
+- cv.THRESH_BINARY: The type of thresholding (binary thresholding).
+- 21: The size of the neighborhood region (21x21 pixels) used to calculate the threshold for each pixel.
+- 30: A constant value subtracted from the computed mean. This helps fine-tune the threshold, making it more sensitive to specific pixel intensities.
+"""
+
 th_img = cv.adaptiveThreshold(src=gray_img, maxValue=255, adaptiveMethod=cv.ADAPTIVE_THRESH_GAUSSIAN_C, thresholdType=cv.THRESH_BINARY, blockSize=21, C=30)
 
 # Optionally, you can apply noise removal (e.g., median blur), but for now its not needed
 # blur_img = cv.medianBlur(th_img, 7)
 
-# Display 
+# Display
 cv.imshow("Thresholded Image", th_img)
 cv.waitKey(0)
+cv.destroyAllWindows()
 
 
 

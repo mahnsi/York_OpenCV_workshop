@@ -12,6 +12,9 @@ import _Colors_module as c
 img = cv.imread("wb.png")
 # you may need to resize the img!
 
+# Resize Image
+img = cv.resize(src=img, dsize=(img.shape[1]//2, img.shape[0]//2))
+
 # Shape of the image (height, width, channels)
 print(f"Image Shape: {img.shape}")
 
@@ -20,7 +23,7 @@ print(f"Image Shape: {img.shape}")
 # ================================
 # cv.line(image, start_point, end_point, color, thickness)
 # Draw a line from point (500, 950) to (1000, 850) with a magenta color and thickness of 6.
-cv.line(img=img, pt1=(500, 950), pt2=(1000, 850), color=c.MAGENTA, thickness=6)
+cv.line(img=img, pt1=(500, 300), pt2=(1000, 500), color=c.MAGENTA, thickness=6)
 
 # ================================
 # Drawing a Rectangle
@@ -28,25 +31,26 @@ cv.line(img=img, pt1=(500, 950), pt2=(1000, 850), color=c.MAGENTA, thickness=6)
 # cv.rectangle(image, top_left, bottom_right, color, thickness)
 # Draw a filled red rectangle from point (600, 550) to (1040, 800) by setting thickness=-6.
 # The negative thickness means the rectangle will be filled.
-cv.rectangle(img=img, pt1=(600, 550), pt2=(1040, 800), color=c.RED, thickness=-6)
+cv.rectangle(img=img, pt1=(200, 300), pt2=(300, 450), color=c.RED, thickness=-6)
 
 # ================================
 # Drawing a Circle
 # ================================
 # cv.circle(image, center, radius, color, thickness)
 # Draw a blue circle centered at (1000, 900) with a radius of 60 and a thickness of 4.
-cv.circle(img=img, center=(1000, 900), radius=60, color=c.BLUE, thickness=4)
+cv.circle(img=img, center=(400, 400), radius=30, color=c.BLUE, thickness=-1)
 
 # ================================
 # Adding Text
 # ================================
 # cv.putText(image, text, origin, fontFace, fontScale, color, thickness)
 # Add the text "This is a text" at position (1700, 1000) with a font size of 2 and black color.
-cv.putText(img=img, text="This is a text", org=(1700, 1000), fontFace=5, fontScale=2, color=c.BLACK, thickness=3)
+cv.putText(img=img, text="This is a text", org=(200, 250), fontFace=5, fontScale=2, color=c.BLACK, thickness=3)
 
 # Display
 cv.imshow("Drawings on Image", img)
 cv.waitKey(0)
+cv.destroyAllWindows()
 
 
 
