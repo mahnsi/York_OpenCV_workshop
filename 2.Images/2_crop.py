@@ -12,7 +12,7 @@ print("Image shape:", img.shape)
 
 # Crop the image
 # Cropping syntax: img[y_start:y_end, x_start:x_end]
-cropped_img = img[620:1200, 420:1300]
+cropped_img = img[200:300, 100:500]
 
 
 # Display Original Image

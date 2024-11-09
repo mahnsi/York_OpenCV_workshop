@@ -13,7 +13,7 @@ def rescale(image, scale=0.75):
     # interpolation=cv.INTER_AREA: This parameter specifies the interpolation method used for resizing.
 
 # Reading Image
-img = cv.imread("cat1.png")
+img = cv.imread("cat2.png")
 
 # Resizing Image using our rescale function
 resized_img = rescale(img)

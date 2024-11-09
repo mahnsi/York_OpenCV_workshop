@@ -25,6 +25,10 @@ cv.imshow("Median Blur", m_img)
 cv.waitKey(0)
 cv.destroyAllWindows()
 
+
+
+
+
 # Notes:
 # - Blurring is useful for reducing noise in images.
 # - Different blurring functions:
