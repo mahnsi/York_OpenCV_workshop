@@ -8,6 +8,8 @@ import os
 # Unlike simple thresholding, adaptive thresholding calculates a different threshold 
 # for each region of the image, making it more effective for images with varying lighting conditions.
 
+# this is how they scan documents and convert them to black and white
+# useul for OCR (opticall character recognition)
 
 # Read 
 img = cv.imread("note.webp")

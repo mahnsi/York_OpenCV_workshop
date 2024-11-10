@@ -4,8 +4,10 @@ Resizing an image using a custom function.
 
 import cv2 as cv
 
+#resize by scale factor (50%)
 def rescale(image, scale=0.50):
     # Images, Videos and Live Video
+    # image.shape gives width height and number of channels of an image
     width = int(image.shape[1] * scale)
     height = int(image.shape[0] * scale)
     dimensions = (width,height)
